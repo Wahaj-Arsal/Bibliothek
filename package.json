@@ -2,9 +2,9 @@
   "name": "bibliothek",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js "
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Wahaj-Arsal/Bibliothek/issues"
   },
-  "homepage": "https://github.com/Wahaj-Arsal/Bibliothek#readme"
+  "homepage": "https://github.com/Wahaj-Arsal/Bibliothek#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.16"
+  }
 }
