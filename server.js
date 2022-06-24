@@ -93,33 +93,20 @@ app.get(
   }
 );
 
-// app.get(
-//   "/covers",
-//   (req, res) => {
-//     const rawData = fs.readFileSync("./data/booksTest.json");
-//     const content = JSON.parse(rawData);
-//     const mappedContent = content.map((books) => {
-//       let authorsBook = books.authors[0].author;
-//       let bookCover = books.covers[0];
-//       let book = {
-//       key: books.key,
-//       title: books.title,
-//       created: books.created.value,
-//       subjects: books.subjects,
-//       authors: authorsBook,
-//       last_modified: books.value,
-//       covers: bookCover,
-//       revision: books.revision,
-//       last_revision: books.last_revision,
-//       };
-//       return book;
-//       return authorsBook;
-//     });
-//     // let data = JSON.stringify(mappedContent);
-//     // fs.writeFileSync("./data/booksTest.json", data);
-//     res.send(mappedContent);
-//   },
-//   () => {
-//     console.log("Covers Crashed");
-//   }
-// );
+//API to get the title of the Books.
+app.get(
+  "/titles/all",
+  (req, res) => {
+    const rawData = fs.readFileSync("./data/Books_2.json");
+    const content = JSON.parse(rawData);
+    // console.log("Response");
+    let getBooksAll = content.map((book) => {
+      return book.title;
+    });
+    // console.log(content);
+    res.send(getBooksAll);
+  },
+  () => {
+    console.log("Get Mens Crash");
+  }
+);
